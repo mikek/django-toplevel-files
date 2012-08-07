@@ -11,7 +11,9 @@ For more sophisticated way of managing this data, please look at
 and [django-robots](https://github.com/jezdez/django-robots/).
 
 Using it for some random arbitrary named files is not practical, as this app
-mostly depends on the way your web server is setup.
+mostly depends on the way your web server is setup. Note that app does not
+validate file path and allows to create a file within subdirectories adjacent
+to `MEDIA_ROOT` (such files are not veery useful though).
 
 ## Usage
 
