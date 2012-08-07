@@ -13,6 +13,15 @@ and [django-robots](https://github.com/jezdez/django-robots/).
 Using it for some random arbitrary named files is not practical, as this app
 mostly depends on the way your web server is setup.
 
+## Usage
+
+ * Install with your favourite method (note, the app is not on PyPi yet).
+ * Add 'toplevel_files' to `INSTALLED_APPS`.
+ * Run `manage.py syncdb` or `manage.py syncdb --migrate` if you are using
+  South.
+ * Optioanlly setup permissions through 'django.contrib.auth' so that your
+  users are allowed to add files, not file types.
+
 ## Internals
 
 The app contains two models tied with one-to-one relationship: one to hold the
@@ -23,17 +32,17 @@ types (paths, essentially).
  * Once the file is uploaded, it is not possible to change it's type via admin.
  * App subclasses django.core.files.storage.FileSystemStorage.
  * Admin actions are disabled for app's models, since they skip custom method
- we use to actually delete the file itself.
+  we use to actually delete the file itself.
  * Updating an existing file would overwrite the target (unlike Django's
- default, wchich gives new file a unique non-conflicting name). This is what
- makes the app really useful.
+  default, wchich gives new file a unique non-conflicting name). This is what
+  makes the app really useful.
 
 ## Rationale
 
 I don't think it is a good idea to use a django view to serve such files:
 
  * Useful `urlconf` on a typical site for such a view would result in a
- database hit for every request or should be hardcoded.
+  database hit for every request or should be hardcoded.
  * Big (lenghty) files download would block a valuable python process/thread.
 
 Someone might want to setup a few static-serving views with hardcoded paths.
