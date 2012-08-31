@@ -65,7 +65,7 @@ not recommended, but you can serve these static files with Django itself.
 To do so, just add something like this (probably at the top) to your project's
 `ROOT_URLCONF`:
 
-    url(r'^(?P<filename>(robots.txt|sitemap.xml))/$', 'toplevel_files.views.serve',
+    url(r'^(?P<filename>(robots\.txt|sitemap\.xml))/$', 'toplevel_files.views.serve',
         {'document_root': settings.MEDIA_ROOT,}),
 
 Much less strict regexp can be used to match randomly named files typilcally
