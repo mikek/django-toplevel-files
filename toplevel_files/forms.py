@@ -5,8 +5,12 @@ from .models import TopLevelFileType, TopLevelFile
 
 
 class TopLevelFileAdminForm(ModelForm):
-    type = ModelChoiceField(queryset=TopLevelFileType.objects.all(),
+    type = ModelChoiceField(
+        queryset=TopLevelFileType.objects.all(),
         help_text=_('Choose from one of the available types'))
+
+    class Meta:
+        model = TopLevelFile
 
     def __init__(self, *args, **kwargs):
         super(TopLevelFileAdminForm, self).__init__(*args, **kwargs)
@@ -27,6 +31,3 @@ class TopLevelFileAdminForm(ModelForm):
             return self.instance.type_id
         else:
             return self.cleaned_data.get('type', None)
-
-    class Meta:
-        model = TopLevelFile

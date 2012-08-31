@@ -14,7 +14,7 @@ class TopLevelFileType(models.Model):
     class Meta:
         verbose_name = _('top level file type')
         verbose_name_plural = _('top level file types')
-        ordering = ['-id',]
+        ordering = ['-id']
 
 
 class TopLevelFile(models.Model):
@@ -31,7 +31,7 @@ class TopLevelFile(models.Model):
     class Meta:
         verbose_name = _('top level file')
         verbose_name_plural = _('top level files')
-        ordering = ['-id',]
+        ordering = ['-id']
 
     def __unicode__(self):
         return '{} {}'.format(self.type.title, self.mod_date)
