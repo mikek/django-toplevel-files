@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-03 15:28+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: forms.py:10
+msgid "Choose from one of the available file types"
+msgstr "Выберите один из доступных типов файлов"
+
+#: forms.py:21
+msgid "Changing type is not allowed"
+msgstr "Нельзя изменять тип файла"
+
+#: models.py:8
+msgid "title"
+msgstr "название"
+
+#: models.py:9
+msgid "file name"
+msgstr "имя файла"
+
+#: models.py:15
+msgid "top level file type"
+msgstr "тип файла верхнего уровня"
+
+#: models.py:16
+msgid "top level file types"
+msgstr "типы файлов верхнего уровня"
+
+#: models.py:24
+msgid "type"
+msgstr "тип"
+
+#: models.py:26
+msgid "file"
+msgstr "файл"
+
+#: models.py:27
+msgid "You can choose a file with arbitrary name"
+msgstr "Вы можете выбрать файл с произвольным именем"
+
+#: models.py:29
+msgid "modification date"
+msgstr "дата модификации"
+
+#: models.py:32
+msgid "top level file"
+msgstr "файл верхнего уровня"
+
+#: models.py:33
+msgid "top level files"
+msgstr "файлы верхнего уровня"
