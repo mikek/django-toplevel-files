@@ -1,6 +1,7 @@
 from django.http import Http404, HttpResponseNotFound
 from django.views.decorators.http import require_http_methods
 from django.views.static import serve as django_serve
+from django.conf import settings
 
 from .models import TopLevelFile
 
@@ -25,4 +26,5 @@ def serve(request, filename, simple_404=True, **kwargs):
         else:
             raise Http404
 
-    return django_serve(request, filename, **kwargs)
+    return django_serve(request, filename, document_root=settings.MEDIA_ROOT,
+                        **kwargs)

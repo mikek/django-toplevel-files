@@ -65,22 +65,23 @@ not recommended, but you can serve these static files with Django itself.
 To do so, just add something like this (probably at the top) to your project's
 `ROOT_URLCONF`:
 
-    url(r'^(?P<filename>(robots\.txt|sitemap\.xml))/$', 'toplevel_files.views.serve',
-        {'document_root': settings.MEDIA_ROOT,}),
+    (r'^(?P<filename>(robots\.txt|sitemap\.xml))/$', 'toplevel_files.views.serve')
 
 Much less strict regexp can be used to match randomly named files typilcally
 used by site ownership verfification mechanizms: ```[a-z0-9]+\.(txt|xml|html)```
 
-Note, that:
+Note:
 
  * you'll still have to create apropriate file type with exact file
   name.
- * a broad urlconf line placed on top would capture urls which you expect to
-  handle with some other apps (`django.contrib.sitemaps`, for example).
+ * a broad urlconf line placed on top may capture urls which you possibly
+  expect to be handled with some other apps
+  (`django.contrib.sitemaps`, for example).
 
 The view checks if requested filename matches existing TopLevelFile object and
 tries to read the file from disc. See this app's code and official Django
-documentation on [serving static files](https://docs.djangoproject.com/en/1.4/howto/static-files/#serving-other-directories).
+documentation on
+[serving static files](https://docs.djangoproject.com/en/1.4/howto/static-files/#serving-other-directories).
 
 ## Internals
 
