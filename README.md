@@ -4,7 +4,8 @@ Simple [Django](http://djangoproject.com) app to manage a few admin-uploaded
 files intended to be available at the site root. Typically, those would be:
 [/sitemap.xml](http://www.sitemaps.org/) and
 [/robots.txt](http://www.robotstxt.org/). It allows to avoid using SSH or
-FTP by end users of the site and integrates into Django admin interface.
+FTP by site admins and integrates into Django admin interface with simple and
+flexible permissions scheme.
 
 For more sophisticated way of managing this data, please look at
 [django.contrib.sitemaps](https://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/)
@@ -15,6 +16,10 @@ app mostly depends on the way your web server or project urlconf is setup. Note
 that app does not validate file path and allows to create a file within
 subdirectories adjacent to `MEDIA_ROOT` (such files are not very useful
 though).
+
+Nobody can stop you using bare `django.views.static.serve` with a very
+relaxing urlconf and some hackish upload methods. If this sounds like
+your way, skip this app.
 
 ## Usage
 
