@@ -8,7 +8,7 @@ except ImportError:
 
 setup(
     name = 'django-toplevel-files',
-    version = '0.1.1',
+    version = '0.1.2',
     packages = find_packages(),
     install_requires = [],
     url = 'https://github.com/mikek/django-toplevel-files',
