@@ -7,7 +7,7 @@ from .models import TopLevelFileType, TopLevelFile
 class TopLevelFileAdminForm(ModelForm):
     type = ModelChoiceField(
         queryset=TopLevelFileType.objects.all(),
-        help_text=_('Choose from one of the available types'))
+        help_text=_('Choose from one of the available file types'))
 
     class Meta:
         model = TopLevelFile

@@ -24,7 +24,7 @@ class TopLevelFile(models.Model):
     type = models.OneToOneField(TopLevelFileType, verbose_name=_('type'))
     file = models.FileField(
         _('file'), upload_to=file_path, storage=OverwriteFSStorage(),
-        help_text=_('you can choose a file with arbitrary name')
+        help_text=_('You can choose a file with arbitrary name')
     )
     mod_date = models.DateTimeField(_('modification date'), auto_now=True)
 
